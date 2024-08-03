@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title> User login page</title>
+</head>
+{% include 'logo.html' %}
+<center> <h1> E-HEALTHCARE ADVISOR </h1></center>
+{% include 'menu.html' %}
+<br> <br>
+<body>
+<form action="/checkuser/" method="post">
+    {% csrf_token %}
+<table align="center" border="0">
+    <tr> <th> <h1> User Login </h1> </th></tr>
+    <tr> <th> <input type="text" placeholder="User Name" name="username"></th> </tr>
+    <tr> <th> <input type="password" placeholder="Password" name="password"></th>
+    <tr>
+        <th> <button type="submit"> Login </button>
+            <button type="reset"> Reset</button> </th>
+    </tr>
+</table>
+</form>
+</body>
+<font color="red">
+<center>
+{{ message }}
+    {{ mssg }}
+    </center>
+    </font>
+</html>

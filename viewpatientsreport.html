@@ -1,0 +1,36 @@
+{% load staticfiles %}
+<html>
+<head>
+    <title> View Patients Report </title>
+</head>
+<center><h1> E-Healthcare Advisor </h1></center>
+{% include 'usermenu.html' %}
+<img src="{% static 'images/img02.jpg' %}" width="1500" height="400">
+<br> <br> <br>
+<body bgcolor="#e9967a">
+<table align="center" border="1">
+    <tr> <th colspan="6"> <h2> ALL REGISTERED USERS </h2></th></tr>
+    <tr>
+        <th width="100"> FIRST NAME</th>
+        <th width="100"> LAST NAME</th>
+        <th width="100"> AGE </th>
+        <th width="100"> GENDER </th>
+        <th width="100"> ADDRESS </th>
+    </tr>
+    {% for x in object_list %}
+    <tr>
+        <th width="100"> {{ x.firstname }}</th>
+        <th width="100"> {{ x.lastname }}</th>
+        <th width="100"> {{ x.age }} </th>
+        <th width="100"> {{ x.gender }}</th>
+        <th width="100"> {{ x.address }} </th>
+    </tr>
+    {% endfor %}
+</table>
+<center>
+    <h3>
+        <a href="/backuser/"> Back </a>
+    </h3>
+</center>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login</title>
+</head>
+<body>
+{% include 'logo.html' %}
+<center> <h1> E-HEALTHCARE ADVISOR </h1></center>
+<form action="/admincheck/" method="post">
+    {% csrf_token %}
+    {% include 'menu.html' %}
+    <br>
+<table align="center" border="0">
+    <tr><th> <h3> Admin Login </h3></th></tr>
+    <tr><th><input type="text" placeholder="USERNAME" name="uname" required></th></tr>
+    <tr><th><input type="password" placeholder="PASSWORD" name="upass"></th></tr>
+    <tr>
+        <th colspan="2">
+            <button type="submit"> Login </button> </th>
+    </tr>
+</table>
+    </form>
+<br>
+<center>
+    <font color="red">
+            {{ msg }}
+            </font>
+</center>
+</body>
+</html>

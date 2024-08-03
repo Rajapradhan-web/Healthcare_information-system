@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<html>
+<head>
+    <title> User Menu</title>
+</head>
+<body>
+<link rel="stylesheet" href="{% static 'css/nav.css' %}">
+<table align="center" border="0" width="700">
+<div class="container">
+  <nav>
+  <ul class="nav">
+    <li> <a href="/userhome/"> HOME </a> </li>
+    <li><a href="#"> REPORT </a>
+      <ul>
+        <li><a href="/patientsreport/">PATIENTS REPORT </a></li>
+              <li><a href="/diseasesandmedicine/"> DISEASES AND MEDICINE </a></li>
+      </ul>
+    </li>
+     <li> <a href="/searchmedicine/"> SEARCH MEDICINE </a> </li>
+     <li> <a href="/changeupwd/"> CHANGE PASSWORD </a> </li>
+      <li> <a href="/userlogout/"> LOGOUT </a> </li>
+  </ul>
+  </nav>
+</div>
+</table>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+</head>
+<link rel="stylesheet" href="{% static 'css/nav.css' %}">
+<body bgcolor="#f0fff0">
+<table align="center" border="2" width="1000" bgcolor="#ff7f50">
+    <div class="container">
+  <nav>
+  <ul class="nav">
+        <li> <a href="/homepage/"> HOME PAGE</a> </li>
+        <li> <a href="/userregistration/"> USER REGISTRATION</a> </li>
+         <li>   <a href="/adminlogin/"> ADMIN LOGIN</a> </li>
+         <li>   <a href="/userlogin/"> USER LOGIN</a>
+        <li> <a href="#"> REPORT </a>
+          <ul>
+              <li> <a href="/patientsreportmenu/"> PATIENTS REPORT </a> </li>
+              <li> <a href="/diseasesandmedicinemenu/"> DISEASES AND MEDICINES </a> </li>
+          </ul>
+      </li>
+         <li>   <a href="/contactus/"> CONTACT US </a> </li>
+  </ul>
+  </nav>
+    </div>
+</table>
+</body>
+</html>

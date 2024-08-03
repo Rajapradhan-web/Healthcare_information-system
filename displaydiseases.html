@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title> Display Disease </title>
+</head>
+<body bgcolor="#fff8dc">
+{% include 'logo.html' %}
+{% include 'adminmenu.html' %}
+<center> <h1> E-HEALTHCARE ADVISOR </h1></center>
+{% if data %}
+<table align="center" border="1">
+    <tr> <th colspan="5"> <h2> ALL DISEASES </h2></th></tr>
+    <tr>
+        <th width="150"> DISEASE NAME</th>
+        <th width="150"> SYMPTOMS </th>
+        <th width="150"> UPDATE </th>
+        <th width="150"> DELETE </th>
+    </tr>
+    {% for x in data %}
+        <tr>
+        <th> {{ x.disease_name }}</th>
+        <th> {{ x.symptoms }}</th>
+        <th>
+            <a href="/updatedisease/?id={{ x.disease_id }}">
+                Yes
+            </a>
+        </th>
+        <th>
+            <form action="/deletedisease/" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="deld" value="{{ x.disease_id }}">
+            <button type="submit"> Yes, Delete </button>
+                </form>
+        </th>
+    </tr>
+    {% endfor %}
+{% else %}
+    <center> <h3> Sorry, No data available </h3></center>
+<center> <font color="green">
+<h3>{{ msg }}</h3>
+</font> </center>
+</table>
+{% endif %}
+</body>
+</html>

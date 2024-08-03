@@ -1,0 +1,39 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Menu</title>
+</head>
+<body>
+<link rel="stylesheet" href="{% static 'css/nav.css' %}">
+<table align="center" border="2" width="700">
+    <div class="container">
+  <nav>
+  <ul class="nav">
+    <li> <a href="/adminhome/"> HOME </a> </li>
+    <li><a href="#"> DISEASE </a>
+      <ul>
+        <li><a href="/adddisease/"> ADD DISEASE </a></li>
+        <li><a href="/modifydiseases/"> MODIFY DISEASES </a></li>
+      </ul>
+    </li>
+      <li> <a href="#"> MEDICINE </a>
+        <ul>
+            <li> <a href="/addmedicine/"> ADD MEDICINE </a> </li>
+            <li> <a href="/modifymedicine/"> MODIFY MEDICINE </a> </li>
+        </ul>
+      </li>
+      <li> <a href="#"> REPORT </a>
+          <ul>
+              <li> <a href="/adpatientsreport/"> PATIENTS REPORT </a> </li>
+              <li> <a href="/addiseasesandmedicines/"> DISEASES AND MEDICINES </a> </li>
+          </ul>
+      </li>
+      <li> <a href="/adminlogout/"> LOGOUT </a> </li>
+  </ul>
+  </nav>
+</div>
+</table>
+</body>
+</html>

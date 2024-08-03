@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title> Modify Medicine </title>
+</head>
+{% include 'logo.html' %}
+{% include 'adminmenu.html' %}
+<body bgcolor="#fff8dc">
+<br> <br>
+{% if data %}
+<table align="center" border="2">
+    <tr> <th colspan="4"> <h3> ALL MEDICINES </h3></th></tr>
+    <tr >
+        <th width="100"> Medicine Name </th>
+        <th width="100"> Medicine Description </th>
+        <th width="100" colspan="2"> Modify </th>
+    </tr >
+    {% for x in data %}
+        <tr>
+        <th> {{ x.medicinename }} </th>
+        <th> {{ x.medicinedescription }} </th>
+        <th>
+            <a href="/updatemedicine/?id={{ x.medicinename }}">
+                Update
+            </a>
+            <br>
+            <br>
+            <form action="/deletemedicineadmin{{ x.id }}/" method="post">
+                    {% csrf_token %}
+            <button type="submit"> Delete </button>
+            <br> <br>
+                </form>
+        </th>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<center> Sorry, no data is available </center>
+{% endif %}
+<center>
+    <font color="green">
+        {{ msg }}
+    </font>
+</center>
+</body>
+</html>
+
+

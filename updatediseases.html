@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Update Diseases </title>
+</head>
+{% include 'logo.html' %}
+{% include 'adminmenu.html' %}
+<body bgcolor="#fff8dc">
+<form action="/saveupdateddiseases/" method="post">
+    {% csrf_token %}
+<table align="center">
+<tr> <th> <h3> UPDATE DISEASES </h3></th></tr>
+    {% for x in data %}
+    <tr> <th> DISEASES ID: <input type="number" value="{{ x.disease_id }}" name="updatediseaseid" readonly> </th> </tr>
+    <tr> <th> <br> DISEASE NAME: <input type="text" value="{{ x.disease_name }}" name="updatediseasename" required> </th></tr>
+    <tr> <th> <br> SYMPTOMS: <input type="text" value="{{ x.symptoms }}" name="updatesymptoms" required> </th></tr>
+    <br> <br>
+    <tr>
+         <th> <br>  <button type="submit"> Update </button> </th>
+    </tr>
+    {% endfor %}
+</table>
+</form>
+</body>
+</html>

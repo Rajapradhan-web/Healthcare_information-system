@@ -1,0 +1,32 @@
+<html>
+<head>
+    <title> User Home </title>
+</head>
+<body bgcolor="#e9967a">
+<center> <h1> E-Healthcare Advisor </h1></center>
+{% include 'usermenu.html' %}
+{% include 'logo.html' %}
+<br>
+{% if res %}
+<table align="center" border="2">
+  <tr> <th colspan="4"> <h3> Medicine Details </h3></th></tr>
+    <tr>
+        <th> Disease Name </th>
+        <th> Symptom Name </th>
+        <th> Medicine Name </th>
+        <th> Medicine Description </th>
+    </tr>
+    {% for x in res %}
+    <tr>
+        <th> {{ x.diseasename }} </th>
+        <th> {{ x.symptomname }} </th>
+        <th> {{ x.medicinename }} </th>
+        <th> {{ x.medicinedescription}} </th>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+<center> <b> Sorry, the entered disease name is not available </b></center>
+{% endif %}
+</body>
+</html>

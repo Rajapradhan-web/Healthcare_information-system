@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title> Add medicine </title>
+</head>
+{% include 'logo.html' %}
+{% include 'adminmenu.html' %}
+<body bgcolor="#fff8dc">
+<br>
+<form action="/savemedicine/" method="post">
+    {% csrf_token %}
+<table align="center" border="0">
+    <tr> <th> <h3> ADD MEDICINE </h3></th></tr>
+    <tr>  <th> DISEASE NAME: <input type="text" name="dname" required></th> </tr>
+    <tr>  <th> <br> SYMPTOM NAME: <input type="text" name="sname" required></th> </tr>
+    <tr>  <th> <br> MEDICINE NAME: <input type="text" name="mname" required></th> </tr>
+    <tr>  <th> <br> MEDICINE DESCRIPTION: <input type="text" name="mdes" required></th> </tr>
+    <tr> <th>
+        <br> <br>
+            <button type="submit"> Save </button>
+            <button type="reset"> Reset </button>
+    </th></tr>
+</table>
+</form>
+<center>
+    <font color="green">
+        {{ msg }}
+    </font>
+</center>
+</body>
+</html>

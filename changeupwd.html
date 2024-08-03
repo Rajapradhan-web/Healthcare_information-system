@@ -1,0 +1,29 @@
+{% load staticfiles %}
+<html>
+<head>
+    <title> Change User Password </title>
+</head>
+<center> <h1> E-HEALTHCARE ADVISOR </h1></center>
+{% include 'usermenu.html' %}
+<body bgcolor="#e9967a">
+<img src="{% static 'images/img02.jpg' %}" width="1500" height="400">
+<form action="/changeuserpwd/" method="post">
+    {% csrf_token %}
+<table align="center" border="0">
+    <tr> <th> <h2> Change Password </h2></th></tr>
+    <tr> <th> Old Password: <input type="password" name="upassword">
+        <br> <br>
+    <input type="hidden" name="username" value=""> </th></tr>
+    <tr> <th> New Password: <input type="password" name="unpassword"> </th></tr>
+    <tr>
+        <th width="60">
+            <br>
+            <button type="submit"> Change </button>
+            <button type="reset"> Reset </button>
+        </th>
+    </tr>
+</table>
+</form>
+<center> {{ message }}</center>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title> All diseases and medicines </title>
+</head>
+<center><h1> E-Healthcare Advisor </h1></center>
+{% include 'logo.html' %}
+{% include 'adminmenu.html' %}
+<body bgcolor="#fff8dc">
+<br> <br>
+<table align="center" border="2">
+    <tr> <th colspan="4"> <h3> ALL MEDICINES </h3></th></tr>
+    <tr>
+        <th> Disease Name </th>
+        <th> Symptoms </th>
+        <th> Medicine Name  </th>
+        <th> Medicine Description  </th>
+    </tr>
+    {% for x in object_list %}
+    <tr>
+        <th> {{ x.diseasename }} </th>
+        <th> {{ x.symptomname }} </th>
+        <th> {{ x.medicinename }} </th>
+        <th> {{ x.medicinedescription }} </th>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

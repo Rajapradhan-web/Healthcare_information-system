@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title> All diseases and medicines </title>
+</head>
+{% include 'logo.html' %}
+{% include 'menu.html' %}
+<br> <br>
+<body bgcolor="#f0fff0">
+<table align="center" border="2">
+<tr> <th colspan="4"> <h3> ALL DISEASES AND MEDICINES </h3> </th></tr>
+    <tr>
+        <th> Disease Name </th>
+        <th> Symptoms </th>
+        <th> Medicine Name </th>
+        <th> Medicine description </th>
+    </tr>
+    {% for x in data %}
+        <tr>
+        <th> {{ x.diseasename }} </th>
+        <th> {{ x.symptomname }} </th>
+        <th> {{ x.medicinename }} </th>
+        <th> {{ x.medicinedescription }} </th>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
